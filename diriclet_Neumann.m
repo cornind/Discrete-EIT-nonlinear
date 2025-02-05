@@ -17,7 +17,7 @@ phi = eye(4*n,4*n);
 
 
 I= zeros(4*n,4*n);U=zeros(n^2+4*n,4*n);
-[I,U]=experi_func(phi,n,conduct_horizonal,conduct_vertical);
+[I,U]=experi_func(phi,n,conduct_horizonal,conduct_vertical,1e-16);
 
 
 % parfor id=1:4*n

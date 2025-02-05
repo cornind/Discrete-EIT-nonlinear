@@ -1,4 +1,4 @@
-function [I,U] = experi_func(phi,n,conduct_horizonal,conduct_vertical)
+function [I,U] = experi_func(phi,n,conduct_horizonal,conduct_vertical,tol)
 %EXPERI_FUNC 此处显示有关此函数的摘要
 %   此处显示详细说明
 
@@ -56,7 +56,7 @@ function [I,U] = experi_func(phi,n,conduct_horizonal,conduct_vertical)
     
     for  i = 1:size(phi,2)
         err = 1;
-    while err > 1e-15
+    while err > tol
         
         w = (L-diag(vertcat(3*U(1:n^2,i).^2,zeros(4*n,1))))\(phi(:,i)-L*U(:,i)+vertcat(U(1:n^2,i).^3,zeros(4*n,1)));
         err = norm(w,2);
