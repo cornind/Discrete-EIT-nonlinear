@@ -17,7 +17,7 @@ phi = eye(4*n,4*n);
 
 
 I= zeros(4*n,4*n);U=zeros(n^2+4*n,4*n);
-[I,U]=experi_func(phi,n,conduct_horizonal,conduct_vertical,1e-16);
+[I,U]=experi_func(phi,n,conduct_horizonal,conduct_vertical,5e-16);
 
 
 % parfor id=1:4*n
@@ -25,7 +25,7 @@ I= zeros(4*n,4*n);U=zeros(n^2+4*n,4*n);
 % end
 errI = I.*randn(4*n,4*n)*0.01/100*0;
 I = I+errI;
-boundayrate = 1;innerrate = 1;
+boundayrate = 10;innerrate = 10;
 % [gradL_condhorz,gradL_condvert] = generateGrad(n,boundayrate);
 %     save("gradL_cond.mat","gradL_condvert","gradL_condhorz");
 
